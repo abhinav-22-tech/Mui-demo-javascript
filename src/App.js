@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { Avatar, AvatarGroup } from "@mui/material";
 
-function App() {
+const users: { id: number }[] = [
+  { id: 0 },
+  { id: 1 },
+  { id: 2 },
+  { id: 3 },
+  { id: 4 }
+];
+
+const Uhh = () => {
+  return <Avatar>UHH</Avatar>;
+};
+
+const SpacingBroken = () => (
+  <AvatarGroup max={4} spacing={-10}>
+    {users.map((user) => {
+      return <Uhh />;
+    })}
+  </AvatarGroup>
+);
+const SpacingWorks = () => (
+  <AvatarGroup max={4} spacing={-10}>
+    {users.map((user) => {
+      return <Avatar>UHH</Avatar>;
+    })}
+  </AvatarGroup>
+);
+
+export const ActiveUsers = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <SpacingBroken />
+      <SpacingWorks />
+    </>
   );
-}
-
-export default App;
+};
